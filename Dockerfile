@@ -1,2 +1,2 @@
 FROM httpd 
-copy . index.html 
+copy .  index.html 

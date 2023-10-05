@@ -1,2 +1,2 @@
 FROM httpd 
-copy .  index.html 
+copy .  /usr/local/apache2/htdocs/index.html 

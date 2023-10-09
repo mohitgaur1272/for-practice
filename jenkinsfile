@@ -1,0 +1,31 @@
+pipeline {
+    agent any 
+    stages {
+        stage('clone') {
+            steps {
+                 git branch: 'jenkins2', url: 'https://github.com/mohitgaur1272/for-practice.git'  
+                }
+        }
+        stage('build') {
+            steps {
+                    sh 'docker build -t mohitgaur1272/mycode:v${BUILD_NUMBER} .'
+            }
+        }
+        stage('check') {
+            steps {
+                sh 'docker images'
+            }
+        }
+        stage('run') {
+            steps {
+                    sh 'docker run -itd --name practice -p 6000:80 mohitgaur1272/mycode:v${BUILD_NUMBER}'
+            }
+        }    
+        stage('push') {
+            steps {
+               sh 'docker push mohitgaur1272/mycode:v${BUILD_NUMBER}'
+            }
+        }
+        
+    }
+}

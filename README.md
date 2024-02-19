@@ -13,3 +13,8 @@ docker run -i -v /run/docker.sock:/run/docker.sock -v /usr/bin/docker:/bin/docke
 
 ## install jenkins with this document on ubuntu system via java and jenkins manual 
 https://www.rosehosting.com/blog/how-to-install-jenkins-on-ubuntu-22-04/
+
+
+## if you dont want to go this website so create script.sh file and put the data and run give permission for execute and run bu this command 
+sudo +x script.sh
+sudo ./script.sh
